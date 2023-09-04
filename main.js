@@ -3,8 +3,6 @@ const search = document.querySelector(".input");
 const elList = document.querySelector(".list");
 const select = document.querySelector(".select");
 const fragment = document.createDocumentFragment();
-
-
 function renderfunction(arr, list) {
     elList.innerHTML = null;
     arr.forEach(element => {
@@ -26,8 +24,6 @@ function renderfunction(arr, list) {
     elList.appendChild(fragment);
 
 }
-
-
 form.addEventListener("submit", evt => {
     evt.preventDefault();
     const searchVAlue = search.value.trim();
@@ -35,11 +31,13 @@ form.addEventListener("submit", evt => {
     console.log(selectValue);
     getfunction(`https://www.omdbapi.com/?apikey=6120116f&s=${searchVAlue}&type=${selectValue}`)
 })
-function getfunction(url) 
-    fetch(url)
-        .then(res => res.json())
-        .then(data => {
-            renderfunction(data.Search, elList)
-        })
+function getfunction(url)
+{
+fetch(url)
+    .then(res => res.json())
+    .then(data => {
+        renderfunction(data.Search, elList)
+    })
+}
 
 
