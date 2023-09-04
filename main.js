@@ -33,9 +33,9 @@ form.addEventListener("submit", evt => {
     const searchVAlue = search.value.trim();
     const selectValue = select.value.trim();
     console.log(selectValue);
-    getfunction(`http://www.omdbapi.com/?apikey=6120116f&s=${searchVAlue}&type=${selectValue}`)
+    getfunction(`https://www.omdbapi.com/?apikey=6120116f&s=${searchVAlue}&type=${selectValue}`)
 })
-function getfunction(url) {
+function getfunction(url) 
     fetch(url)
         .then(res => res.json())
         .then(data => {
