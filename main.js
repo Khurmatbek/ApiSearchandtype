@@ -41,5 +41,5 @@ function getfunction(url)
         .then(data => {
             renderfunction(data.Search, elList)
         })
-}
+
 
